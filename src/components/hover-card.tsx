@@ -16,7 +16,9 @@ export function HoverCardDemo() {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Button variant="link">@nextjs</Button>
+        <Button variant="link">
+            <img src="/favicon.png" alt="logo" className="w-10 h-10" />
+        </Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-80">
         <div className="flex justify-between space-x-4">
@@ -24,15 +26,14 @@ export function HoverCardDemo() {
             <AvatarImage src="/favicon.png" />
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
-          <div className="space-y-1">
-            <h4 className="text-sm font-semibold">@textify 2024</h4>
+          <div className="space-y-2">
+            <h4 className="text-sm font-semibold">@ textify 2024</h4>
             <p className="text-sm">
             Chat with your documents—upload, ask, and get answers instantly.
             </p>
             <div className="flex items-center pt-2">
-              <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
               <span className="text-xs text-muted-foreground">
-                Joined December 2021
+                @ 2024 Textify.app
               </span>
             </div>
           </div>
