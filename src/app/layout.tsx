@@ -14,6 +14,10 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const pacifico = localFont({
+  src: "./fonts/Pacifico-Regular.ttf",
+  variable: "--font-pacifico",
+});
 
 export const metadata: Metadata = {
   title: "Textify - your documents, now conversational",
@@ -31,10 +35,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+            {children}
           </ThemeProvider>
         </body>
       </html>
