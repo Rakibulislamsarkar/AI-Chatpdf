@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
 const DropdownMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const DropdownMenu: React.FC = () => {
       <div>
         <button
           onClick={toggleDropdown}
-          className="inline-flex justify-center w-full  rounded-lg border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className={buttonVariants({variant: "ghost", size: "lg"})}
         >
           {isOpen ? "Close" : "Menu"}
         </button>
