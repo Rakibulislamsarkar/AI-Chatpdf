@@ -13,11 +13,11 @@ const DropdownMenu: React.FC = () => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; 
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = ""; 
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -26,22 +26,22 @@ const DropdownMenu: React.FC = () => {
       <div>
         <button
           onClick={toggleDropdown}
-          className={buttonVariants({variant: "ghost", size: "lg"})}
+          className={buttonVariants({ variant: "ghost", size: "lg" })}
         >
           {isOpen ? "Close" : "Menu"}
         </button>
       </div>
 
       {isOpen && (
-               <div
-               className={`fixed right-0 z-10 px-2 mt-4 w-full h-screen rounded-lg shadow-lg${
-                 isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-               } data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-50 data-[state=open]:zoom-in-90 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2`}
-               data-state={isOpen ? "open" : "closed"} // Set the state for animations
-               role="menu"
-               aria-orientation="vertical"
-               aria-labelledby="options-menu"
-             >
+        <div
+          className={`fixed right-0 z-10 px-2 mt-4 w-full h-screen rounded-lg shadow-lg${
+            isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+          } data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-50 data-[state=open]:zoom-in-90 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2`}
+          data-state={isOpen ? "open" : "closed"} 
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="options-menu"
+        >
           <div className="bg-slate-900 h-full rounded-lg">
             {/* Image Section */}
             <div className="w-full h-40 mb-6 overflow-hidden rounded-t-lg">
