@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { HoverCardDemo } from "@/components/hover-card";
-import { Badge } from "@/components/ui/badge";
 import CustomMenu from "@/components/customenu";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
@@ -14,10 +14,10 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { LogIn, MoveRight } from "lucide-react";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,16 +64,36 @@ export default function Home() {
       </nav>
 
       <MaxWidthWrapper className="mb-6 mt-10 sm:mt-20 flex flex-col items-center justify-center text-center">
-        <div className="mx-auto mb-4 mt-4  ">
+        {/* <div className="mx-auto mb-4 mt-4  ">
           <Badge className="px-4 py-2 flex max-w-fit  overflow-hidden rounded-full cursor-default">
             Textify is now public!
           </Badge>
-        </div>
+        </div> */}
         <h1 className="max-w-6xl text-3xl md:text-5xl lg:text-[53.94px] leading-8 sm:leading-[40px] md:tracking-[0.5px] md:leading-[50px] lg:tracking-[-1.0788px] lg:leading-[59.334px]">
           Instant Conversations with Your Documents—Upload, Ask, and Discover
           Answers Effortlessly
         </h1>
+        <div className="flex gap-6 md:gap-10 mt-5">
+          <Link href="/sign-up">
+            <Button className="px-6 py-5">
+              Get Started
+              <LogIn className="w-3 h-4 md:w-4 md:h-6 lg:w-5 lg:h-7 ml-2" />
+            </Button>
+          </Link>
+          <Link
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className:
+                "px-6 py-5 hover:underline",
+            })}
+            href="/pricing"
+          >
+            Try Premium <MoveRight className="ml-3" />
+          </Link>
+        </div>
       </MaxWidthWrapper>
+
       <div className="pb-20">
         <div className="relative isolate">
           <div
